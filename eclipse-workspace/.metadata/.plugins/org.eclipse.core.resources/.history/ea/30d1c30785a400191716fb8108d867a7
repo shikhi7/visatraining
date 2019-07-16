@@ -1,0 +1,15 @@
+package com.visa.training.threads;
+
+import java.io.File;
+
+public class FileSearch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String fileName = args[0];
+		String folderName = args[1];
+		File folder = new File(folderName);
+		File[] contents = folder.listFiles();
+	}
+
+}

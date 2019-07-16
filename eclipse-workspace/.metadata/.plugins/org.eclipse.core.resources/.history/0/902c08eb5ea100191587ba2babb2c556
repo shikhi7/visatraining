@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class DOWFinder {
+	public static void findDOW(int day, int month, int year) {
+		int[] monthDays = {31,28,31,30,31,30,31,31,30,31,30,31};
+		int yearDiff = year-1900;
+		int daysDiff = yearDiff*365 +(yearDiff/4);
+		int thisYearDays = 0;
+		if ((year%4==0) && month > 2) {
+//			addDay = true;
+			thisYearDays++;
+		}
+		for (int i=0;i<month;i++) {
+			thisYearDays += monthDays[i];
+		}
+		thisYearDays += day;
+		int totalDays = daysDiff + thisYearDays;
+		System.out.println(totalDays/7);
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int day = sc.nextInt();
+		int month = sc.nextInt();
+		int year = sc.nextInt();
+		findDOW(day, month, year);
+	}
+
+}

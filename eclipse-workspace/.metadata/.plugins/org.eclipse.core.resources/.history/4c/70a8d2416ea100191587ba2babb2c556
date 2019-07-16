@@ -1,0 +1,7 @@
+
+public class ChemicalElement {
+	int atomicNum;
+	String symName;
+	String FullName;
+	public boolean isAlkaliMetal()
+}

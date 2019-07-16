@@ -1,0 +1,67 @@
+package com.visa.training.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+//DAO class has CRUD + Query methods
+public class ProductDAO {
+
+	public void save(Product toBeSaved) {
+		// insert
+		
+		try(Connection c = JdbcUtil.getConnection()) {
+			
+//			String sql = "insert into product(product_id, product_name, product_price, product_qoh) values("+toBeSaved.getId()+",'"+toBeSaved.getName()+"',"+toBeSaved.getPrice()+","+toBeSaved.getQoh()+")";
+//			System.out.println(sql);
+			String pSql = "insert into product values(?,?,?,?)";
+//			Statement st = c.createStatement();
+			PreparedStatement st = c.prepareStatement(pSql);
+			st.setInt(1, toBeSaved.getId());
+			
+			st.executeUpdate("insert into " + toBeSaved.toString());
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} 
+//		finally {
+//			try {
+//				c.close();
+//			} catch (SQLException e2) {
+//				// TODO: handle exception
+//				e2.printStackTrace();
+//			}
+//		}
+
+	}
+
+//	public Product findById(int id) {
+//		// read based on id
+//		try {
+//			Connection c = JdbcUtil.getConnection();
+//			Statement st = c.createStatement();
+//			String sql = "select * from product";
+//			ResultSet res = st.executeQuery(sql);
+//			ResultSetMetaData rMeta = 
+//		}  catch (Exception e){
+//			e.printStackTrace();
+//		}
+//		
+//		
+//	}
+//
+//	public List<Product> findAll() {
+//		// read all
+//	}
+
+//	public void remove(int id) {
+//		//delete
+//	}
+
+//	public void update (Product updated) {
+//		//update
+//	}
+}

@@ -1,0 +1,83 @@
+package com.visa.training.jdbc;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JButton;
+
+//DAO class has CRUD + Query methods
+public class ProductDAO {
+
+	public int save(Product toBeSaved) {
+		// insert
+		int generatedId = 0;
+		try (Connection c = JdbcUtil.getConnection()) {
+
+//			String sql = "insert into product(product_id, product_name, product_price, product_qoh) values("+toBeSaved.getId()+",'"+toBeSaved.getName()+"',"+toBeSaved.getPrice()+","+toBeSaved.getQoh()+")";
+//			System.out.println(sql);
+			String pSql = "insert into product(product_name, product_price, product_qoh) values(?,?,?)";
+//			Statement st = c.createStatement();
+			PreparedStatement st = c.prepareStatement(pSql, Statement.RETURN_GENERATED_KEYS);
+//			st.setInt(1, toBeSaved.getId());
+			st.setString(1, toBeSaved.getName());
+			st.setFloat(2, toBeSaved.getPrice());
+			st.setInt(3, toBeSaved.getQoh());
+			st.executeUpdate();
+			ResultSet keys = st.getGeneratedKeys();
+			keys.next();
+			generatedId = keys.getInt(1);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+		return generatedId;
+	}
+
+	public Product findById(int id) {
+		// read based on id
+		Product p = null;
+		try (Connection c = JdbcUtil.getConnection()) {
+			PreparedStatement s = c.prepareStatement("select * from product where product_id=?");
+			s.setInt(1, id);
+			ResultSet rs = s.executeQuery();
+			if (rs.next()) {
+				p = new Product();
+				p.setId(rs.getInt(1));
+				p.setName(rs.getString(2));
+				p.setPrice(rs.getFloat(3));
+				p.setQoh(rs.getInt(4));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return p;
+	}
+
+//
+	public List<Product> findAll() {
+		// read all
+		List<Product> all = new ArrayList<>();
+		try(Connection c = JdbcUtil.getConnection()){
+			Statement s = c.createStatement();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return all;
+	}
+
+//	public void remove(int id) {
+//		//delete
+//	}
+
+//	public void update (Product updated) {
+//		//update
+//	}
+}

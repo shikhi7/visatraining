@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert Product</title>
+</head>
+<body>
+<form action="insertProd" method="get">
+Name <input name=n1><br>
+Price <input name=n2><br>
+Qoh <input name=n3><br>
+</body>
+</html>

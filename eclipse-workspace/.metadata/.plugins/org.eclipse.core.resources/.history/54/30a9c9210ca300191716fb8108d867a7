@@ -1,0 +1,23 @@
+package com.visa.training.stack;
+
+import java.util.ArrayList;
+
+public class Circle {
+	float radius;
+	float[] centre = new float[2];
+	
+	public Circle(float radius, float[] centre) {
+		super();
+		this.radius = radius;
+		this.centre[0] = centre[0];
+		this.centre[1] = centre[1];
+	}
+	public static void main(String[] args) {
+		ArrayList<circle> circs = new ArrayList<circle>(100);
+		double r = Math.random();
+		while(r>=0.01) {
+			circle newcir =  
+			circs.add(e)
+		}
+	}
+}

@@ -1,0 +1,11 @@
+interface Stack{
+	public void push (Object element);
+	public Object pop();
+}
+
+class fixedArrayStack implements Stack {
+	Object[] 
+}
+public class StackUser {
+
+}

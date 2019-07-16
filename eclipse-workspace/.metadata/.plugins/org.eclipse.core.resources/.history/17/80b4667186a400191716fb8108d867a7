@@ -1,0 +1,13 @@
+package com.visa.training.threads;
+
+import java.io.File;
+import java.util.List;
+import java.util.Queue;
+
+public class SearchWorker extends Thread{
+	String fileName;
+	Queue<File> filesQueue;
+	List<File> results;
+	
+	
+}

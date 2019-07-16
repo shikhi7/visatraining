@@ -1,0 +1,32 @@
+interface Stack{
+	public void push (Object element);
+	public Object pop();
+}
+
+class fixedArrayStack implements Stack {
+	
+	Object[] stack;
+	int top;
+	
+	public fixedArrayStack() {
+		super();
+		this.stack = new Object[100];
+		this.top = -1;
+	}
+	
+//	@Override
+	
+	public void push(Object element) {
+		this.top ++;
+		this.stack[top] = element;
+	}
+	
+	public Object pop() {
+		this.top --;
+		return stack[top+1];
+	}
+	
+}
+public class StackUser {
+
+}

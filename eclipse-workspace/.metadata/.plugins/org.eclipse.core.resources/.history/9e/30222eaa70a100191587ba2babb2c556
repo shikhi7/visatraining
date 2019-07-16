@@ -1,0 +1,12 @@
+
+public class ChemicalElement {
+	
+	Metal = {3,11,19,37,55,87};
+	int[] alkaliMetal = {3,11,19,37,55,87};
+	int atomicNum;
+	String symName;
+	String FullName;
+	public boolean isAlkaliMetal() {
+		
+	}
+}

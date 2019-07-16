@@ -1,0 +1,13 @@
+package com.visa.training.stack;
+
+public class circle {
+	float radius;
+	int[] centre;
+	public circle(float radius, int[] centre) {
+		super();
+		this.radius = radius;
+//		this.centre = new int[2];
+		this.centre = centre;
+	}
+	
+}

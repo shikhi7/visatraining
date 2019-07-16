@@ -1,0 +1,55 @@
+package com.visa.training.jdbc;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+
+//DAO class has CRUD + Query methods
+public class ProductDAO {
+
+	public void save(Product toBeSaved){
+		// insert
+		Connection c = JdbcUtil.getConnection();
+		try {
+			Statement st = c.createStatement();
+			String sql = "insert into product(product_id, product_name, product_price, product_qoh) values ";
+			st.executeUpdate("insert into " + toBeSaved.toString());
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+//			if (c!=null) {
+//				c.close();
+//			}
+		}
+
+	}
+
+	public Product findById(int id) {
+		// read based on id
+		try {
+			Connection c = JdbcUtil.getConnection();
+			Statement st = c.createStatement();
+			String sql = "select * from product";
+			ResultSet res = st.executeQuery(sql);
+			ResultSetMetaData rMeta = 
+		}  catch (Exception e){
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+	public List<Product> findAll() {
+		// read all
+	}
+
+//	public void remove(int id) {
+//		//delete
+//	}
+
+//	public void update (Product updated) {
+//		//update
+//	}
+}
