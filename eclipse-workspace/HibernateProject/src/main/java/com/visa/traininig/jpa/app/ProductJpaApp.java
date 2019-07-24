@@ -1,0 +1,27 @@
+package com.visa.traininig.jpa.app;
+
+import com.visa.traininig.jpa.dal.JpaProductDAO;
+import com.visa.traininig.jpa.domain.Product;
+
+public class ProductJpaApp {
+
+    public static void main(String[] args) {
+        JpaProductDAO dao = new JpaProductDAO();
+        Product test = new Product("bernate", 399, 800);
+        Product saved = dao.save(test);
+        System.out.println(saved);
+        
+        //to test findById
+        Product fromDB = dao.findById(saved.getId());
+        System.out.println("FromDB: "+fromDB);
+        System.out.println(saved==fromDB);
+        
+        //to test update
+        fromDB.setPrice(fromDB.getPrice()+10);
+        dao.update(fromDB);
+        Product updated = dao.findById(fromDB.getId());
+        System.out.println("Updated :"+updated);
+        System.exit(0);
+    }
+
+}

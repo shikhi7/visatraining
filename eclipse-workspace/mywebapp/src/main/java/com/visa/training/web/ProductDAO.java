@@ -83,6 +83,17 @@ public class ProductDAO {
 		return all;
 	}
 
+	public void remove(int id) {
+		try(Connection c=JdbcUtil.getConnection()){
+			Statement s = c.createStatement();
+			s.executeUpdate("delete from product where product_id="+id);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+	}
+
 //	public void remove(int id) {
 //		//delete
 //	}
