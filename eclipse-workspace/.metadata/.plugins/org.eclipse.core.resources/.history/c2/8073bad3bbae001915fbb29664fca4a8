@@ -1,0 +1,31 @@
+package com.visa.training.bookwithboot.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="book")
+public class Book {
+	
+	@Id
+	@Column(name="book_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int id;
+	
+	@Column(name="name")
+	String name;
+	@Column(name="author")
+	String author;
+	@Column(name="category")
+	String Category;
+	@Column(name="release_year")
+	int releaseYear;
+	
+	public Book() {
+		
+	}
+}

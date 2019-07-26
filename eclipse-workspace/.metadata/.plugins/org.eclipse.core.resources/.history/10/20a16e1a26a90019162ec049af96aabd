@@ -1,0 +1,19 @@
+package com.visa.traininig.jpa.dal;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
+import com.visa.traininig.jpa.domain.Product;
+
+public class JpaProductDAO {
+	
+	public int save (Product p) {
+		EntityManagerFactory emf = JpaUtil.getEmf();
+		EntityManager em = emf.createEntityManager();
+		try(){
+			em.persist(p);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,11 @@
+package com.visa.training.ui;
+
+import com.visa.training.service.ProductService;
+
+public class ProductConsoleUI {
+	
+	ProductService service;
+	public void createProductWithUI() {
+		
+	}
+}

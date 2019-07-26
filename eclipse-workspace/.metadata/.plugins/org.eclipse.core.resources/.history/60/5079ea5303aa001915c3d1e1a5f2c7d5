@@ -1,0 +1,12 @@
+package com.visa.training;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.visa.training.dal.ProductDAO;
+
+@Configuration
+public class ProductAppConfiguration {
+	@Bean
+	public ProductDAO 
+}

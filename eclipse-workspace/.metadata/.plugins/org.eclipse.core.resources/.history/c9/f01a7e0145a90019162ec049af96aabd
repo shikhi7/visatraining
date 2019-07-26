@@ -1,0 +1,26 @@
+package com.visa.traininig.jpa.domain;
+
+public class CurrentAccount extends Account{
+
+    float ODLimit;
+
+    public CurrentAccount() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    public CurrentAccount(float balance,float ODLimit) {
+        super(balance);
+        this.ODLimit = ODLimit;
+    }
+
+    public float getODLimit() {
+        return ODLimit;
+    }
+
+    public void setODLimit(float oDLimit) {
+        ODLimit = oDLimit;
+    }
+    
+    
+}

@@ -1,0 +1,5 @@
+package com.visa.traininig.jpa.domain;
+
+public class Account {
+
+}

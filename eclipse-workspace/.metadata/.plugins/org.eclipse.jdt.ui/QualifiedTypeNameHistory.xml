@@ -32,7 +32,19 @@
 <fullyQualifiedTypeName name="com.visa.training.jdbc.ProductDAO"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="com.visa.training.jdbc.JdbcUtil"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="com.visa.traininig.jpa.domain.Account"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
+<fullyQualifiedTypeName name="javax.persistence.FetchType"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinTable"/>
+<fullyQualifiedTypeName name="javax.persistence.ManyToMany"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+<fullyQualifiedTypeName name="javax.persistence.EntityTransaction"/>
+<fullyQualifiedTypeName name="com.visa.traininig.jpa.domain.Address"/>
+<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="com.visa.traininig.jpa.domain.Product"/>
+<fullyQualifiedTypeName name="javax.persistence.Query"/>
+<fullyQualifiedTypeName name="com.visa.training.domain.Product"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

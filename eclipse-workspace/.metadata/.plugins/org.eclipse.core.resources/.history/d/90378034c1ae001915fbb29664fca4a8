@@ -1,0 +1,6 @@
+package com.visa.training.service;
+
+public interface BookService {
+	public Book findById(int id);
+	
+}

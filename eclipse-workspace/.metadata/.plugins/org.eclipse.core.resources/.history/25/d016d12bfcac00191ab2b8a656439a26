@@ -1,0 +1,16 @@
+package com.visa.training.web.config;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.visa.training.service.ProductService;
+
+@Controller
+public class ProductController {
+	
+	ProductService service;
+	
+	public ModelAndView listProducts() {
+		
+	}
+}

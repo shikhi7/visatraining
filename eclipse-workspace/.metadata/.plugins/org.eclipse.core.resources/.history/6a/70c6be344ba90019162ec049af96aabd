@@ -1,0 +1,5 @@
+package com.visa.traininig.jpa.app;
+
+public class InheritanceTest {
+
+}

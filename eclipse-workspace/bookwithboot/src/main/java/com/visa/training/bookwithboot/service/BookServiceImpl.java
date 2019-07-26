@@ -1,0 +1,48 @@
+package com.visa.training.bookwithboot.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.visa.training.bookwithboot.dal.BookRepository;
+import com.visa.training.bookwithboot.domain.Book;
+
+@Service
+public class BookServiceImpl implements BookService {
+	
+	BookRepository dao;
+	
+	@Autowired
+	public void setDao(BookRepository dao) {
+		this.dao=dao;
+	}
+
+	@Override
+	public Book findById(int id) {
+		// TODO Auto-generated method stub
+		return dao.findById(id);
+	}
+
+	@Override
+	public int addNewBook(Book b) {
+		// TODO Auto-generated method stub
+		int id=0;
+		Book created = dao.save(b);
+		id = created.getId();
+		return id;
+	}
+
+	@Override
+	public List<Book> findAll() {
+		// TODO Auto-generated method stub
+		return dao.findAll();
+	}
+
+	@Override
+	public void remove(int id) {
+		// TODO Auto-generated method stub
+		dao.deleteById(id);
+	}
+
+}

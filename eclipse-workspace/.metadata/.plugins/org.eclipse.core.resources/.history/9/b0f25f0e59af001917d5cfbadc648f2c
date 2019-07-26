@@ -1,0 +1,77 @@
+package com.visa.training.bookwithboot.domain;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.visa.traininig.jpa.domain.Customer;
+
+@Entity
+@Table(name="Chapter")
+public class Chapter {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="chapter_id")
+	int id;
+	
+	@Column(name="name")
+	String name;
+	
+	@Column(name="num_pages")
+	int numPages;
+	
+	@Column(name="ch_index")
+	int index;
+	
+	@ManyToOne(cascade=CascadeType.PERSIST)
+	@JoinColumn(name="cust_id")
+	Customer customer;
+
+	public Chapter () {
+		
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getNumPages() {
+		return numPages;
+	}
+
+	public void setNumPages(int numPages) {
+		this.numPages = numPages;
+	}
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
+	@Override
+	public String toString() {
+		return "Chapter [id=" + id + ", name=" + name + ", numPages=" + numPages + ", index=" + index + "]";
+	}
+}

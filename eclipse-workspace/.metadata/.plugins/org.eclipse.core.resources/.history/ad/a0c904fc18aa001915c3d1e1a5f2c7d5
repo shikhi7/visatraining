@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home Page</title>
+</head>
+<body bgcolor="pink">
+
+<a href=calc.html>Calc</a><br>
+<a href=prod.html>Gen Prod</a><br>
+<a href=prodportal.jsp>Product Portal</a>
+
+</body>
+</html>

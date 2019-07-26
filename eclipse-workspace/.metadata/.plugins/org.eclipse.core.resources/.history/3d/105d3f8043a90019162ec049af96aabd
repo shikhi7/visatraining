@@ -1,0 +1,27 @@
+package com.visa.traininig.jpa.domain;
+
+public abstarct class Account {
+
+	int id;
+	float balance;
+	public Account() {
+		//TODO
+	}
+	public Account(float balance) {
+		super();
+		this.balance = balance;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public float getBalance() {
+		return balance;
+	}
+	public void setBalance(float balance) {
+		this.balance = balance;
+	}
+	
+}

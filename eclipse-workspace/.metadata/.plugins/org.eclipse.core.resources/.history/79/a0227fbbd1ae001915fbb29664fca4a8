@@ -1,0 +1,8 @@
+package com.visa.training.bookwithboot.domain;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Chapter {
+
+}

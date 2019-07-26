@@ -1,0 +1,10 @@
+package com.visa.traininig.jpa.domain;
+
+public class Account {
+
+	int id;
+	float balance;
+	public Account() {
+		
+	}
+}

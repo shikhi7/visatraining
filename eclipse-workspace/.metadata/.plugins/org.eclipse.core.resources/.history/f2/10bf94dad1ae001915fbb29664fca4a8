@@ -1,0 +1,10 @@
+package com.visa.training.bookwithboot.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Chapter")
+public class Chapter {
+
+}

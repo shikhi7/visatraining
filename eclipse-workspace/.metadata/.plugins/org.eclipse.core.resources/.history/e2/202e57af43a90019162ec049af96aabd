@@ -1,0 +1,10 @@
+package com.visa.traininig.jpa.domain;
+
+public class SavingsAccount extends Account {
+
+	public SavingsAccount() {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+
+}

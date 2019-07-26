@@ -1,0 +1,33 @@
+package com.visa.training.web.config;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.visa.training.domain.Product;
+import com.visa.training.service.ProductService;
+
+@Controller
+public class ProductController {
+	
+	@Autowired
+	ProductService service;
+	
+	@RequestMapping("/listProducts")
+	public ModelAndView listProducts() {
+		List<Product> prodList = service.findAll();
+		return new ModelAndView("products", "prodList", prodList);
+	}
+	
+	@RequestMapping("/addProduct")
+	public ModelAndView addProduct(@RequestParam("name")String name, @RequestParam("price")float price, @RequestParam("qoh")int qoh) {
+		Product p = new Product(name, price, qoh);
+		service.addNewProduct(p);
+		List<Product> productList = service.findAll();
+		return new ModelAndView("products", "productList", productList);
+	}
+}

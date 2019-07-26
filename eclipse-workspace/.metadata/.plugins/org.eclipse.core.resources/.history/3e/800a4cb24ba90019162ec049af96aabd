@@ -1,0 +1,25 @@
+package com.visa.traininig.jpa.app;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+
+import com.visa.traininig.jpa.dal.JpaUtil;
+import com.visa.traininig.jpa.domain.CurrentAccount;
+import com.visa.traininig.jpa.domain.SavingsAccount;
+
+public class InheritanceTest {
+	public static void main(String[] args) {
+		EntityManager em = JpaUtil.getEmf().createEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+		
+		SavingsAccount sa = new SavingsAccount(10000);
+		CurrentAccount ca = new CurrentAccount(10000, 100);
+		em.persist(sa);
+		em.persist(ca);
+		
+		tx.commit();
+		em.close();
+		System.exit(0);
+	}
+}

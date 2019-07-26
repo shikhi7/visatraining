@@ -1,0 +1,5 @@
+package com.visa.training.bootproject.web;
+
+public class ProductRestController {
+
+}

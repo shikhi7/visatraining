@@ -1,0 +1,24 @@
+package com.visa.traininig.jpa.app;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+
+import com.visa.traininig.jpa.dal.JpaUtil;
+import com.visa.traininig.jpa.domain.Account;
+
+public class AssociationTest {
+	public static void main(String[] args) {
+		createAccountAndCustomerSeparately();
+	}
+
+	private static void createAccountAndCustomerSeparately() {
+		// TODO Auto-generated method stub
+		EntityManager em = JpaUtil.getEmf().createEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+		Customer c = new Customer("mm","nn","ll", new Date(System.currentTimeMillis()));
+		tx.commit();
+		em.close();
+		System.exit(0);
+	}
+}

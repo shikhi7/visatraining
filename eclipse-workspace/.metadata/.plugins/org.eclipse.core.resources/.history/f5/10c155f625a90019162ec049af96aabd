@@ -1,0 +1,10 @@
+package com.visa.traininig.jpa.dal;
+
+import com.visa.traininig.jpa.domain.Product;
+
+public class JpaProductDAO {
+	
+	public int save (Product p) {
+		
+	}
+}

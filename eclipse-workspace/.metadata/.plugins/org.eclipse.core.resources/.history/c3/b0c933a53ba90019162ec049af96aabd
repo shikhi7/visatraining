@@ -1,0 +1,17 @@
+package com.visa.traininig.jpa.app;
+
+import com.visa.traininig.jpa.dal.JpaProductDAO;
+import com.visa.traininig.jpa.domain.Product;
+
+public class ProductJpaApp {
+
+    public static void main(String[] args) {
+        JpaProductDAO dao = new JpaProductDAO();
+        Product test = new Product("bernate", 399, 800);
+        Product saved = dao.save(test);
+        System.out.println(saved);
+        
+        System.exit(0);
+    }
+
+}

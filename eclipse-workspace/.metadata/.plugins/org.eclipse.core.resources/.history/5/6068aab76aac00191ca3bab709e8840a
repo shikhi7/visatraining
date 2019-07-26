@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<a href=hellopage.html?>Hello World</a>
+<a href=calculatorview.jsp>Calculator</a>
+</body>
+</html>

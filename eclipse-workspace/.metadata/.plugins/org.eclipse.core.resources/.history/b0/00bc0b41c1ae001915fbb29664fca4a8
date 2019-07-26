@@ -1,0 +1,8 @@
+package com.visa.training.service;
+
+import com.visa.training.bookwithboot.domain.Book;
+
+public interface BookService {
+	public Book findById(int id);
+	
+}

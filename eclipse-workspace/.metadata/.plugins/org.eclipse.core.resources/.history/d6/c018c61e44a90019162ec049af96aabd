@@ -1,0 +1,16 @@
+package com.visa.traininig.jpa.domain;
+
+public class CurrentAccount extends Account {
+	
+	float ODLimit;
+	
+	public CurrentAccount() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public CurrentAccount(float balance) {
+		super(balance);
+		// TODO Auto-generated constructor stub
+	}
+
+}

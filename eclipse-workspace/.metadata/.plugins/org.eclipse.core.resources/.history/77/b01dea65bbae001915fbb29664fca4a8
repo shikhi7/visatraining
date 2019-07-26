@@ -1,0 +1,14 @@
+package com.visa.training.bookwithboot.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="book")
+public class Book {
+	int id;
+	String name;
+	String author;
+	String Category;
+	int year;
+}

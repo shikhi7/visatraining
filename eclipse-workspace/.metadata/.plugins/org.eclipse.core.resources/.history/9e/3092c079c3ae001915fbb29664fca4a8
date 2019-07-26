@@ -1,0 +1,19 @@
+package com.visa.training.web;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.visa.training.service.BookService;
+
+@RestController
+public class BookRestController {
+	
+	@Autowired
+	BookService service;
+	
+	public List<Book> getAll(){
+		return service.findAll();
+	}
+}
